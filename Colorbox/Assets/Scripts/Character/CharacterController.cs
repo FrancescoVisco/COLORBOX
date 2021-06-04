@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [Header ("Basic Movement Settings")]
     public Rigidbody2D rb;
     public float movementSpeed;
     public float JumpHeight;
@@ -11,19 +12,15 @@ public class CharacterController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+
+    [Header ("Color Activated")]
     public bool Red;
     public bool Yellow;
     public bool Blue;
 
+    [Header ("Sprites Settings")]
     public SpriteRenderer spriteRenderer;
-    public Sprite S_White;
-    public Sprite S_Red;
-    public Sprite S_Blue;
-    public Sprite S_Yellow;
-    public Sprite S_Orange;
-    public Sprite S_Purple;
-    public Sprite S_Green;
-    public Sprite S_Empty;
+    public Sprite[] Sprites;
 
     private void Start()
     {
@@ -50,42 +47,42 @@ public class CharacterController : MonoBehaviour
         //Gestione cambio sprite
         if(Red == true && Blue == false && Yellow == false)
         {
-           spriteRenderer.sprite = S_Red; 
+           spriteRenderer.sprite = Sprites[1]; 
         }
 
         if(Red == false && Blue == true && Yellow == false)
         {
-           spriteRenderer.sprite = S_Blue; 
+           spriteRenderer.sprite = Sprites[2]; 
         }       
 
         if(Red == false && Blue == false && Yellow == true)
         {
-           spriteRenderer.sprite = S_Yellow; 
+           spriteRenderer.sprite = Sprites[3];
         }    
 
         if(Red == true && Blue == true && Yellow == true)
         {
-           spriteRenderer.sprite = S_White; 
+           spriteRenderer.sprite = Sprites[0];
         }  
 
         if(Red == true && Blue == true && Yellow == false)
         {
-           spriteRenderer.sprite = S_Purple; 
+           spriteRenderer.sprite = Sprites[5]; 
         } 
 
         if(Red == true && Blue == false && Yellow == true)
         {
-           spriteRenderer.sprite = S_Orange; 
+           spriteRenderer.sprite = Sprites[4];
         } 
 
         if(Red == false && Blue == true && Yellow == true)
         {
-           spriteRenderer.sprite = S_Green; 
+           spriteRenderer.sprite = Sprites[6];
         } 
 
         if(Red == false && Blue == false && Yellow == false)
         {
-           spriteRenderer.sprite = S_Empty; 
+           spriteRenderer.sprite = Sprites[7];
         } 
     }
     
