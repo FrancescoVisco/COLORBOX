@@ -86,9 +86,10 @@ public class CharacterController : MonoBehaviour
         } 
     }
     
-    //Gestione collisione pulsanti
+    //Gestione collisioni
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Gestione collisioni pulsanti
         if(other.gameObject.CompareTag("Button"))
         {
             if(other.gameObject.GetComponent<ButtonScript>().ButtonRed == true)
